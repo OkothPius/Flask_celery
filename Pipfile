@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 flask = "*"
 celery = "*"
+flask-mail = "*"
+redis = "*"
 
 [dev-packages]
 
