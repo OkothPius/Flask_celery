@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask using Celery</title>
+</head>
+<body>
+    <h1>Sending Asynchronous Email</h1>
+    {% for message in get_flashed_messages() %}
+    <p style="color:brown">{{ message }}</p>
+    {% endfor %}
+    <form method="POST" action="">
+        <p>Mail to: <input type="text" name="email" value="{{ email }}"></p>
+        <input type="submit" name="submit" value="send" id="">
+        <input type="submit" name="submit" value="send in a minute" id="">
+    </form>
+    
+</body>
+</html>
