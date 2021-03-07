@@ -30,6 +30,16 @@ def background_task(time1, time2):
     task = background_task.delay(10, 20)
     return result
 
+@celery.task
+def send_async_email(email_data):
+    """Background task to send an email with Flask-Mail."""
+    msg = Message(email_data['subject'],
+                  sender=app.config['MAIL_DEFAULT_SENDER'],
+                  recipients=[email_data['to']])
+    msg.body = email_data['body']
+    with app.app_context():
+        mail.send(msg)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
